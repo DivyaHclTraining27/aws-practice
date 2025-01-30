@@ -1,6 +1,11 @@
 name: first workflow
 
-on: pull_request
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize]
 
 jobs:
   job1:
@@ -10,4 +15,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Print message
-        run: echo "my first workflow"
+        run: echo "Hello, World!"
